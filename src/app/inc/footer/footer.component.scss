@@ -1,0 +1,173 @@
+/* footer */
+footer {
+    direction: rtl;
+    margin-top: 180px;
+}
+
+// #footer-section {
+//     margin-top: 150px;
+// }
+
+#footer-section h4 {
+    position: relative;
+    z-index: 1;
+}
+
+#footer-section h4::after {
+    content: "";
+    position: absolute;
+    max-width: 362px;
+    height: 100%;
+    top: 18px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: url("../../../assets/imgs/lines.png") no-repeat;
+    z-index: -1;
+}
+
+#footer-section .form-font h3 {
+    text-align: left;
+    font: Bold 18px/28px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+    opacity: 1;
+    padding: 15px 0 0 50px;
+}
+
+#footer-section .message-us {
+    padding: 8px 0;
+}
+
+.small-font {
+    font: 18px/45px AlmaraiReg;
+    letter-spacing: 0px;
+    color: #050038;
+    word-break: break-word;
+    padding-inline-start: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: self-start;
+}
+
+.field-Class {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #05003826;
+    border-radius: 8px;
+    opacity: 1;
+    width: 100% !important;
+    max-width: 300px !important;
+}
+
+.btnClass {
+    background: #a5dc79 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 12px #a5dc7940;
+    border-radius: 25px;
+    opacity: 1;
+    border: none;
+    width: 90px;
+    height: 40px;
+    transition: all .3s ease-in-out;
+}
+
+.btnClass:hover,
+.btnClass:focus,
+.btnClass:active {
+  background: white;
+  color: #a5dc79;
+}
+
+.fo-titles {
+    text-align: right;
+    font: Bold 24px/36px Almarai;
+    letter-spacing: 0px;
+    color: #b8336a;
+    opacity: 1;
+    margin-bottom: 40px;
+}
+
+#footer-section h4 {
+    text-align: center;
+    font: Bold 36px/36px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+    opacity: 1;
+}
+
+#saved-rights {
+    margin-top: 120px;
+}
+#saved-rights h6 {
+    font: normal 18px/45px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+    opacity: 1;
+}
+
+/* end footer */
+
+@media (max-width: 575px) {
+    .form-inline .form-group {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+        text-align: center;
+    }
+    #saved-rights h6 {
+        font: normal 14px/45px Almarai;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    #saved-rights {
+        margin-top: 50px;
+    }
+    #footer-section {
+        margin-top: 50px;
+    }
+
+    #footer-section .form-font h3 {
+        font: Bold 15px/28px Almarai;
+    }
+
+    .small-font {
+        font: 15px/45px AlmaraiReg;
+    }
+
+    .fo-titles {
+        font: Bold 19px/36px Almarai;
+    }
+
+    #footer-section h4 {
+        font: Bold 24px/36px Almarai;
+    }
+
+    #saved-rights h6 {
+        font: normal 15px/45px Almarai;
+    }
+}
+
+@media (max-width: 992px) {
+    .form-q {
+        text-align: right;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #footer-section .form-font h3 {
+        font: Bold 15px/28px Almarai;
+        text-align: right;
+    }
+}
+
+@media (max-width: 575px) {
+    #footer-section h4::after {
+        background: none;
+    }
+}

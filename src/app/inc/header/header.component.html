@@ -1,0 +1,88 @@
+<!-- header -->
+<header>
+
+    <!-- top header -->
+    <ng-template #notReg>
+        <div class="top-header container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-start align-items-center">
+                    <div class="images row" (click)="login()">
+                        <img src="assets/imgs/login.png" alt="whats-app">
+                        <p>تسجيل الدخول</p>
+                    </div>
+                </div>
+                <div
+                    class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-end align-items-center pb-2 pb-sm-0">
+                    <div class="language row" (click)="register()">
+                        <img src="assets/imgs/register.png" alt="global">
+                        <p>حساب جديد</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    <!-- end top header -->
+
+    <!-- top header -->
+    <div class="top-header container-fluid" *ngIf="user; else notReg">
+        <div class="row">
+            <div class="col-12 col-sm-4 d-flex justify-content-center justify-content-sm-start align-items-center">
+                <div class="images row" (click)="profile()">
+                    <img src="assets/imgs/user.png" alt="whats-app">
+                    <p>حسابي</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="profile row" routerLink="profile/{{id}}">
+                    <img src="assets/imgs/user.png" alt="whats-app">
+                    <p>الملف الشخصي</p>
+                </div>
+            </div>
+            <div
+                class="col-12 col-sm-4 d-flex justify-content-center justify-content-sm-end align-items-center pb-2 pb-sm-0">
+                <div class="language row" (click)="logOut()">
+                    <img src="assets/imgs/logout.png" alt="global">
+                    <p>تسجيل الخروج</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end top header -->
+
+    <!-- main-header -->
+    <div class="container main-header">
+        <div class="row">
+            <div class="mobile-bar" (click)="toggleMenu()">
+                <img src="assets/imgs/menu.png" alt="menu" class="img-fluid">
+            </div>
+            <div class="logo" >
+                <img src="assets/imgs/logo.png" alt="page-logo" class="img-fluid" routerLink="">
+            </div>
+            <div class="row toogle-nav" [@slideInOut]="menuState">
+                <nav>
+                    <ul class="nav  p-0">
+                        <li class="nav-item" (click)="menuItem()">
+                            <a class="nav-link " routerLink="" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact:true}">الرئيسية</a>
+                        </li>
+                        <li class="nav-item" (click)="menuItem()">
+                            <a class="nav-link" routerLink="about" routerLinkActive="active">عن خشخيشة</a>
+                        </li>
+                        <li class="nav-item" (click)="menuItem()">
+                            <a class="nav-link" routerLink="add-recruitment" routerLinkActive="active">تسجيل التأهيل كحاضنة</a>
+                        </li>
+                        <li class="nav-item" (click)="menuItem()">
+                            <a class="nav-link" routerLink="contact-us" routerLinkActive="active">تواصل معنا</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="btn add-nursery" (click)="menuItem()" routerLink="add-nursery" routerLinkActive="active">
+                    تسجيل دار حضانة
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- end main-header -->
+</header>
+<!-- end header -->

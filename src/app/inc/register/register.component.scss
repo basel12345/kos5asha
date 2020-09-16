@@ -1,0 +1,37 @@
+* {
+    direction: rtl;
+    text-align: right;
+}
+
+.form-group label, .modal-title {
+    font: 18px/28px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+}
+
+.form-control {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #05003826;
+    border-radius: 8px;
+}
+
+.form-control::placeholder, select.form-control option{
+    font: 18px/27px AlmaraiReg;
+    color: #050038;
+    opacity: 0.25;
+}
+
+.reg{
+    font: 15px/28px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+    display: inline-block;
+}
+
+.link{
+    float: left;
+    cursor: pointer;
+    font: 12px/28px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+}

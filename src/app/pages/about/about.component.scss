@@ -1,0 +1,166 @@
+main {
+    background: transparent url("../../../assets/imgs/bg_home.png") 0% 0% no-repeat padding-box;
+    direction: rtl;
+    position: relative;
+    top: 142px;
+    z-index: 1;
+}
+
+main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/imgs/bg.png");
+    z-index: -1;
+}
+/* about page */
+/* main header */
+#about-us {
+    background: url("../../../assets//imgs/image_about.png") center no-repeat;
+    min-height: 500px;
+    text-align: center;
+    text-align: center;
+    font: Light 72px/80px Almarai;
+    letter-spacing: 0px;
+    color: #a5dc79;
+    opacity: 1;
+}
+
+.h-font {
+    font: normal 24px/30px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+    margin: auto;
+}
+
+.small-font {
+    font: normal 14px/20px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+    margin: auto;
+}
+
+.about-class {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#about-us h3 {
+    text-align: center;
+    font: bold 72px/80px Almarai;
+    letter-spacing: 0px;
+    color: #a5dc79;
+    opacity: 1;
+}
+
+#about-us p {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font: normal 16px/30px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+    opacity: 1;
+}
+
+/* end main header */
+
+/* video */
+#video-section {
+    margin-top: 150px;
+}
+
+#video-section .about {
+    box-sizing: border-box;
+    padding-right: 119px;
+}
+
+#video-section .center {
+    display: flex;
+    align-self: center;
+}
+
+/* end video */
+
+/* vision */
+
+.container-md {
+    width: 65%;
+}
+
+#vision-section {
+    margin-top: 150px;
+}
+
+#vision-section .list li {
+    padding: 35px;
+    display: flex;
+    flex-flow: row;
+}
+
+#vision-section img {
+    width: 80px;
+    height: 65px;
+}
+
+#vision-section .text-class {
+    padding: 0px 0 30px 0;
+}
+#vision-section h3 {
+    padding: 0 0 20px 0;
+}
+
+/* end vision */
+
+/* end about page */
+@media screen and (max-width: 991px) {
+    main {
+        top: 194px;
+    }
+}
+
+@media (max-width: 767px) {
+    #about-us h3 {
+        font: bold 52px/80px Almarai;
+    }
+
+    #about-us p {
+        font: normal 12px/20px Almarai;
+    }
+
+    .small-font {
+        font: normal 12px/20px Almarai;
+    }
+
+    .h-font {
+        font: normal 19px/30px Almarai;
+    }
+
+    main {
+        top: 142px;
+    }
+    #video-section {
+        margin-top: 50px;
+    }
+
+    #video-section .about {
+        padding: 10px;
+    }
+
+    #vision-section {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 575px) {
+    main {
+        top: 190px;
+    }
+}

@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h5 class="modal-title">حسابي</h5>
+</div>
+<div class="modal-body text-center">
+    <img src="assets/imgs/user (2).png" alt="">
+    <p>الإسم: {{user?.username}}</p>
+    <p>البريد الإلكتروني: {{user?.email}}</p>
+    <p>الجوال: {{user?.mobile}}</p>
+    <p>الهاتف الثابت: {{user?.telephone}}</p>
+    <button class="btn" (click)="editInfo()">نعديل البيانات</button>
+    <button class="btn" (click)="editPassword()">تعديل كلمة المرور</button>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="dismiss()">الغاء</button>
+</div>

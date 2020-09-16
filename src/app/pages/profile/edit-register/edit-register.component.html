@@ -1,0 +1,158 @@
+<main>
+
+    <!-- form-container -->
+    <section class="form-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-section text-right">
+                        <form [formGroup]="registerForm" (ngSubmit)="submit()">
+                            <h3>
+                               تعديل بيانات التسجيل
+                            </h3>
+                            <p>التسجيل للإناث فقط</p>
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-4 col-form-label">الاسم</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" formControlName="name"
+                                         placeholder="...اكتب اسمك" required
+                                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.name.errors.required">قم بادخال اسمك</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="birth_date" class="col-sm-4 col-form-label">تاريخ الميلاد</label>
+                                <div class="col-sm-8">
+                                    <input type="date" class="form-control" placeholder="...حدد تاريخ ميلادك" formControlName="dateOfBirth"
+                                        required [ngClass]='{ "is-invalid": submitted && !f.dateOfBirth.errors}'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
+                                    <div *ngIf="f.dateOfBirth.errors.required"> قم بادخال تاريخ ميلادك</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-4 col-form-label">البريد الإلكتروني</label>
+                                <div class="col-sm-8">
+                                    <input type="email" formControlName="email" class="form-control" placeholder="...اكتب البريد الإلكتروني"
+                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required"> قم بادخال البريد الإلكتروني</div>
+                                    <div *ngIf="f.email.errors.email">البريد الالكتروني غير صحيح</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="qualification" class="col-sm-4 col-form-label">المؤهل</label>
+                                <div class="col-sm-8">
+                                    <input type="text" formControlName="qualification" class="form-control" placeholder="...اكتب مؤهلك التعليمي"
+                                     required [ngClass]='{ "is-invalid": submitted && !f.qualification.errors}'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
+                                        <div *ngIf="f.qualification.errors.required">  قم بادخال مؤهلك التعليمي</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="experienceYears" class="col-sm-4 col-form-label">سنوات الخبرة</label>
+                                <div class="col-sm-8">
+                                    <input type="number" formControlName="yearsOfExperience" class="form-control" placeholder="...تحديد سنوات الخبرة"
+                                    required [ngClass]='{ "is-invalid": submitted && !f.yearsOfExperience.errors}'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="submitted && f.yearsOfExperience.errors" class="invalid-feedback">
+                                        <div *ngIf="f.yearsOfExperience.errors.required">   قم بادخال سنوات الخبرة</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row ">
+                                <label class="col-sm-4 col-form-label">الدورات</label>
+                                <div class="col-sm-8" formArrayName="courses">
+                                    <!-- <ng-template> -->
+                                        <div class="courses" *ngFor="let course of courses.controls; index as idx">
+                                            <input [formControlName]="idx" class="form-control">
+                                            <img src="../../../assets/imgs/add.png" alt="add" *ngIf="idx==0"
+                                                (click)="addCourseField()">
+                                            <img src="../../../assets/imgs/signs (4).png" alt="" *ngIf="idx > 0"
+                                                (click)="deleteNameField(idx)">
+
+                                        </div>
+                                        <!-- <div class="row">
+                                            <div class="col-12">
+                                                <div *ngIf="submitted && f.Courses.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.Courses.errors.required">قم بادخال اسم الدورة</div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    <!-- </ng-template> -->
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="educationalQualification" class="col-sm-4 col-form-label">المؤهل الدراسي</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control"  formControlName="educationalQualification"  required [ngClass]='{ "is-invalid": submitted && !f.educationalQualification.errors}'>
+                                        <option *ngFor="let res of educationalQualifications" [value]="res.name">{{res.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="submitted && f.educationalQualification.errors" class="invalid-feedback">
+                                        <div *ngIf="f.educationalQualification.errors.required"> قم بتحديد مدة العقد</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="row text-center justify-content-center align-items-center files">
+                                <img src="../../../assets/imgs/upload.png" alt="upload" class="img-fluid px-4">
+                                <p *ngIf="!CV">
+                                    إرفاق السيرة الذاتية
+                                </p>
+                                <p *ngIf="CV">
+                                  {{CV}}
+                                </p>
+                                <div class="form-group ">
+                                    <div>
+                                        <input type="file" class="form-control" placeholder="...تحديد السعة الإستيعابية"
+                                            (change)="uploadCv($event.target.files)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row text-center justify-content-center align-items-center files">
+                                <img src="../../../assets/imgs/upload.png" alt="upload" class="img-fluid px-4">
+                                <p *ngIf="!Certificate">
+                                    إرفاق الشهادة
+                                </p>
+                                <p *ngIf="Certificate">
+                                  {{Certificate}}
+                                </p>
+                                <div class="form-group ">
+                                    <div>
+                                        <input type="file" class="form-control" placeholder="...تحديد السعة الإستيعابية"
+                                            (change)="uploadCertificate($event.target.files)" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row text-center justify-content-center">
+                                <button class="btn edit">تعديل</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="dismiss()">الغاء</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+</main>

@@ -1,0 +1,283 @@
+<main >
+    <!-- kg-container -->
+    <section class="kg-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center kg-text">
+                        <h3>
+                            تسجيل دار حضانة
+                        </h3>
+                        <p>
+                          نطمح بالريادة والقيادة في توجيه دور الحضانات ورعاية الرضع مع العمل على تأهيل كوادر الحاضنات بأفضل الطرق العلمية والعملية لننطلق وفقا لرؤية مملكتنا 2030
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- kg-container -->
+
+    <!-- form-container -->
+    <section class="form-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 align-self-center">
+                    <!-- <div class="text-right form-text">
+                        <p>
+                            التدريب هو وسيلة حديثة وفعالة لتحسين وتطوير أي مجال من المجالات الحياتية المختلفة، سواء أكان
+                            ذلك في المجال الشخصي، الدراسي، المالي، العملي، العائلي، الصحي أو أي مجال آخر.
+                            <br><br> والتدريب اليوم
+                            يحتل مكانة مركزية بالعالم كوسيلة هامة وفعالة لتحقيق الأهداف عن طريق تقسيمها لمهمات صغيرة.
+                        </p>
+
+                    </div> -->
+                    <!-- <div class="hr"></div> -->
+                    <h2 class="col-12">
+                        لماذا تسجلي معنا كدار حضانة ؟
+                    </h2>
+                    <div class="row img-container text-center">
+                        <div class="col-3 my-2">
+                            <img src="../../../assets/imgs/score.png" alt="score" class="img-fluid">
+                        </div>
+                        <div class="col-9  align-self-lg-center">
+                            <div class="text-right img-siplin">
+                                <h5>ميزة 1</h5>
+                                <p>‎تسهيل الوصول الى القوى العاملة التي تحتاجها دار الحضانة
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row img-container">
+                        <div class="col-3 my-2">
+                            <img src="../../../assets/imgs/team.png" alt="score" class="img-fluid">
+                        </div>
+                        <div class="col-9  align-self-lg-center">
+                            <div class="text-right img-siplin">
+                                <h5>ميزة 2</h5>
+                                <p>تسهيل العملية التسويقية لدار الحضانة والتعريف بها لعملاء جدد
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row img-container">
+                        <div class="col-3 my-2">
+                            <img src="../../../assets/imgs/trophy.png" alt="score" class="img-fluid">
+                        </div>
+                        <div class="col-9  align-self-lg-center">
+                            <div class="text-right img-siplin">
+                                <h5>ميزة 3</h5>
+                                <p>‎تقديم مستوى عالي من الشفافية والاحترافية من خلال التقييمات المقدمة من العملاء لدار الحضانة والحاضنات
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 my-4 my-lg-0">
+                    <div class="form-section text-right">
+                        <form #form="ngForm" (ngSubmit)="submit(form)"  [hidden]="map">
+                            <h3>
+                                بيانات التسجيل
+                            </h3>
+                            <div class="form-group row">
+                                <label for="nurseryName" class="col-sm-4 col-form-label">اسم الحضانة</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" #nurseryName="ngModel"
+                                        [(ngModel)]="nursery.name" name="nurseryName" placeholder="...اكتب اسم الحضانة"
+                                        required [ngClass]='{ "is-invalid":  form.submitted && !nurseryName.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf=" form.submitted && !nurseryName.valid " class="alert alert-danger">
+                                        قم بادخال اسم الحضانة
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="license" class="col-sm-4 col-form-label">الترخيص</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" placeholder="...اكتب الترخيص"
+                                        #license="ngModel" [(ngModel)]="nursery.License" name="license" required
+                                        [ngClass]='{ "is-invalid":  form.submitted && !license.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf=" form.submitted && !license.valid " class="alert alert-danger">
+                                        قم بادخال الترخيص
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="phone" class="col-sm-4 col-form-label">الجوال</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" placeholder="...اكتب رقم هاتف الحضانة"
+                                        #phone="ngModel" [(ngModel)]="nursery.mobile" name="phone" required
+                                        [pattern]="mobNumberPattern"
+                                        [ngClass]='{ "is-invalid":  form.submitted && !phone.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf=" form.submitted && !phone.valid " class="alert alert-danger">
+                                        قم بادخال رقم هاتف الحضانة
+                                    </div>
+                                    <div *ngIf="phone.errors?.pattern" class="alert alert-danger">
+                                      يجب ادخال الرقم صحيح (يحتوي على 10 ارقام)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticPhone" class="col-sm-4 col-form-label">الهاتف الثابت</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" placeholder="...اكتب رقم هاتف الحضانة"
+                                        #staticPhone="ngModel" [(ngModel)]="nursery.telephone" name="staticPhone"
+                                        [pattern]="mobNumberPattern"
+                                        required [ngClass]='{ "is-invalid":  form.submitted && !staticPhone.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf=" form.submitted && !staticPhone.valid " class="alert alert-danger">
+                                        قم بادخال رقم الهاتف الثابت
+                                    </div>
+                                    <div *ngIf="staticPhone.errors?.pattern" class="alert alert-danger">
+                                      يجب ادخال الرقم صحيح (يحتوي على 10 ارقام)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-4 col-form-label">البريد الإلكتروني</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" placeholder="...اكتب البريد الإلكتروني"
+                                        #email="ngModel" [(ngModel)]="nursery.email" name="email" required
+                                        pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                                        [ngClass]='{ "is-invalid":  form.submitted && !email.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12" *ngIf="form.submitted">
+                                    <div *ngIf=" email.errors?.required " class="alert alert-danger">
+                                        قم بادخال البريد الإلكتروني
+                                    </div>
+                                    <div *ngIf="email.errors?.pattern" class="alert alert-danger">
+                                        البريد الالكتروني غير صحيح
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="location" class="col-sm-4 col-form-label">الموقع الجغرافي</label>
+                                <div class="col-sm-8">
+                                    <!-- (focus)="this.scrollTop = 0"
+                                         (focus)="openMap(this)"-->
+                                    <input type="text"  class="form-control"
+                                        placeholder="...موقع الحضانة على الخريطة" #location="ngModel"
+                                        [(ngModel)]="nursery.address" name="location" required (focus)="openMap()"
+                                        [ngClass]='{ "is-invalid":  form.submitted && !location.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="form.submitted && !location.valid " class="alert alert-danger">
+                                        قم بادخال الموقع الجغرافي
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="capacity" class="col-sm-4 col-form-label">السعة</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" placeholder="...تحديد السعة الإستيعابية"
+                                        #capacity="ngModel" [(ngModel)]="nursery.Capacity" name="capacity" required
+                                        [ngClass]='{ "is-invalid":form.submitted && !capacity.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf=" form.submitted && !capacity.valid " class="alert alert-danger">
+                                        قم بتحديد السعة الإستيعابية
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="room" class="col-sm-4 col-form-label">كم غرفه</label>
+                              <div class="col-sm-8">
+                                  <input type="number" class="form-control" placeholder="...تحديد كم غرفه"
+                                      #room="ngModel" [(ngModel)]="nursery.room" name="room" required
+                                      [ngClass]='{ "is-invalid":form.submitted && !room.valid }'>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-12">
+                                  <div *ngIf=" form.submitted && !room.valid " class="alert alert-danger">
+                                      قم بتحديد كم غرفه
+                                  </div>
+                              </div>
+                          </div>
+                            <div class="form-group row">
+                                <label for="sitterCount" class="col-sm-4 col-form-label">عدد الحاضنات</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" placeholder="...تحديد عدد الحاضنات"
+                                        #sitterCount="ngModel" [(ngModel)]="nursery.numberOfNurseries"
+                                        name="sitterCount" required
+                                        [ngClass]='{ "is-invalid":form.submitted && !sitterCount.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="form.submitted && !sitterCount.valid " class="alert alert-danger">
+                                        قم بتحديد عدد الحاضنات
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="hourPrice" class="col-sm-4 col-form-label">سعر الساعة</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" placeholder="...تحديد سعر الساعة"
+                                        #hourPrice="ngModel" [(ngModel)]="nursery.watchPrice" name="hourPrice" required
+                                        [ngClass]='{ "is-invalid": form.submitted && !hourPrice.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="form.submitted && !hourPrice.valid " class="alert alert-danger">
+                                        قم بتحديد سعر الساعة
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="contractDuration" class="col-sm-4 col-form-label">مدة العقد</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" placeholder="...تحديد مدة العقد"
+                                        #contractDuration="ngModel" [(ngModel)]="nursery.durationContract"
+                                        name="contractDuration" required
+                                        [ngClass]='{ "is-invalid":form.submitted && !contractDuration.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="form.submitted && !contractDuration.valid " class="alert alert-danger">
+                                        قم بتحديد مدة العقد
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row text-center justify-content-center">
+                                <button class="btnSend">ارسال</button>
+                            </div>
+                        </form>
+                        <form *ngIf="map">
+                          <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                            <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+                              (dragEnd)="markerDragEnd($event)"></agm-marker>
+                          </agm-map>
+                          <div class="row text-center justify-content-center">
+                            <button style="margin-top: 15px;" type="button" class="btn btn-primary" (click)="dismiss()">حفظ</button>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+

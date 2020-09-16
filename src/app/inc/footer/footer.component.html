@@ -1,0 +1,140 @@
+<footer>
+    <!-- footer -->
+    <section id="footer-section">
+        <div class="container ">
+
+            <h4 class=" text-center ">خشخيشة</h4>
+
+            <div class="row  my-5">
+                <div class="col-lg-6 col-12  my-5">
+                    <h3 class="fo-titles text-right ">راسلنا</h3>
+                    <form #form="ngForm" (ngSubmit)="submit(form)" class="form-q form-font form-inline padding">
+
+                            <div class=" col-12">
+                                <div class=" form-group  ">
+                                    <h3>الاسم</h3>
+                                    <input type="text" class="form-control field-Class" #userName="ngModel"
+                                        [(ngModel)]="contact.name" name="userName" required
+                                        [ngClass]='{ "is-invalid":  form.submitted && !userName.valid }'
+                                        placeholder="أكتب اسمك ...">
+                                </div>
+                                <div *ngIf=" form.submitted && !userName.valid "
+                                    class="col-12 text-center alert alert-danger">
+                                    قم بادخال الاسم
+                                </div>
+                            </div>
+
+                            <div class="col-12 ">
+                                <div class="form-group">
+                                    <h3>الجوال</h3> <input type="text" class="form-control field-Class"
+                                        placeholder="اكتب رقم جوالك ..." #mobile="ngModel" [(ngModel)]="contact.mobile"
+                                        name="mobile" required
+                                        [ngClass]='{ "is-invalid":  form.submitted && !mobile.valid }'>
+                                </div>
+                                <div *ngIf=" form.submitted && !mobile.valid "
+                                    class="col-12 text-center alert alert-danger">
+                                    قم بادخال رقم الهاتف
+                                </div>
+                            </div>
+                            <div class="col-12 ">
+                                <div class="form-group">
+                                    <h3>البريد الاليكتروني</h3><input type="email" class="form-control field-Class"
+                                        placeholder="أكتب البريد الالكتروني..." #email="ngModel"
+                                        [(ngModel)]="contact.email" name="email" required
+                                        pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                                        [ngClass]='{ "is-invalid":  form.submitted && !email.valid }'>
+                                </div>
+                                <div class="col-12 text-center" *ngIf="form.submitted">
+                                    <div *ngIf=" email.errors?.required " class="alert alert-danger">
+                                        قم بادخال البريد الإلكتروني
+                                    </div>
+                                    <div *ngIf="email.errors?.pattern" class="alert alert-danger">
+                                        البريد الالكتروني غير صحيح
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group ">
+                                    <h3>نص الرسالة</h3><textarea class="form-control field-Class" rows="3"
+                                        placeholder="أكتب رسالتك..." #message="ngModel" [(ngModel)]="contact.message"
+                                        name="message" required
+                                        [ngClass]='{ "is-invalid":  form.submitted && !message.valid }'></textarea>
+                                </div>
+                                <div *ngIf=" form.submitted && !message.valid "
+                                    class="col-12 text-center alert alert-danger">
+                                    قم بادخال رقم الهاتف
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group"> <button class="btn btn-primary btnClass my-4">ارسال</button>
+                                </div>
+
+
+                            </div>
+                    </form>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-12 my-5 ">
+
+                    <ul class="navbar-nav ml-auto text-right small-font">
+                        <h3 class="fo-titles">تواصل معنا</h3>
+                        <li class="nav-item nav-ink message-us">
+
+                            <img class="pl-3 img-fluid " src="../../../assets/imgs/location.png" alt="">
+                            تقاطع شارع الاربعين مع فلسطين بجوار هيئه الطيران المدني
+                             Jeddah, Saudi Arabia______
+
+                        </li>
+                        <li class="nav-item nav-ink message-us">
+
+                            <img class="pl-3 img-fluid" src="../../../assets/imgs/phone.png" alt="">0503369883
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link small-font " href="mailto:myrattle.info@gmail.comm"><img
+                                    src="../../../assets/imgs/mail.png" alt="mail" class="pl-3 img-fluid">
+                                    myrattle.info@gmail.com</a>
+                        </li>
+                        <li class="nav-item nav-ink message-us">
+                            <a class="nav-link small-font " href="http://www.myrattle.com/" target="blank">
+                            <img class="pl-3 img-fluid small-font" src="../../../assets/imgs/website.png"
+                                alt="">http://www.myrattle.com
+                                </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-12 my-5">
+
+                    <ul class="navbar-nav ml-auto text-right ">
+                        <h3 class="fo-titles ">تابعنا</h3>
+                        <li class="nav-item">
+                            <a class="nav-link small-font " href="https://facebook.com/" target="_blank"> <img
+                                    class="pl-4 img-fluid" src="../../../assets/imgs/facebook.png">Facebook</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link small-font " href="https://twitter.com/" target="_blank"> <img
+                                    class="pl-4 img-fluid" src="../../../assets/imgs/twitter.png">Twitter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link small-font" href="https://www.linkedin.com/" target="_blank"> <img
+                                    class="pl-4 img-fluid" src="../../../assets/imgs/linkedin.png">
+                                LinkedIn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link small-font" href="https://www.youtube.com/" target="_blank"> <img
+                                    class="pl-4 img-fluid" src="../../../assets/imgs/youtube.png">Youtube</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- end footer -->
+    <section id="saved-rights">
+        <div class="container">
+            <h6 class="my-5">جميع الحقوق محفوظة لمنصة خشخيشة </h6>
+
+        </div>
+    </section>
+</footer>

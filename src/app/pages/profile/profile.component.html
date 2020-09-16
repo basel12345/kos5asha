@@ -1,0 +1,56 @@
+<main>
+   <div class="container">
+     <h4> تسجيل دور حضانه</h4>
+    <div class="table-responsive">
+      <table class="table nursery">
+        <thead>
+          <tr>
+            <th scope="col">الاسم</th>
+            <th scope="col">الجوال</th>
+            <th scope="col">الهاتف</th>
+            <th scope="col">البريد الالكتروني</th>
+            <th scope="col">العنوان</th>
+            <th scope="col">السعه</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let res of Nursery">
+            <th>{{res.name}}</th>
+            <td>{{res.mobile}}</td>
+            <td>{{res.telephone}}</td>
+            <td>{{res.email}}</td>
+            <td>{{res.address}}</td>
+            <td>{{res.Capacity}}</td>
+            <td>
+                <button class="edit" (click)="nursery(res._id)">تعديل</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+     <h4> تسجيل توظيف</h4>
+      <div class="table-responsive">
+        <table class="table nursery">
+          <thead>
+            <tr>
+              <th scope="col">الاسم</th>
+              <th scope="col">البريد الالكتروني</th>
+              <th scope="col">تاريخ الميلاد</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let res of Register">
+              <th>{{res.name}}</th>
+              <td>{{res.email}}</td>
+              <td>{{res.dateOfBirth | date}}</td>
+              <td>
+                  <button class="edit" (click)="register(res._id)">تعديل</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   </div>
+</main>

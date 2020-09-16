@@ -1,0 +1,258 @@
+<main>
+    <!-- kg-container -->
+    <section class="kg-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center kg-text">
+                        <h3>
+                          تسجيل التأهيل كحاضنة
+                        </h3>
+                        <p>
+                          نطمح بالريادة والقيادة فى توجيه دور الحضانات ورعاية الرضع والنشا ومراقبة البرامج التى تقدم لاطفالنا مع العمل على تدريب كوادر الحاضانات بافضل الطرق العلمية لننطلق وفقا لرؤية مملكتنا 2030
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- kg-container -->
+
+    <!-- form-container -->
+    <section class="form-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 align-self-center">
+                    <!-- <div class="text-right form-text">
+                        <p>
+                            التدريب هو وسيلة حديثة وفعالة لتحسين وتطوير أي مجال من المجالات الحياتية المختلفة، سواء أكان
+                            ذلك في المجال الشخصي، الدراسي، المالي، العملي، العائلي، الصحي أو أي مجال آخر. <br><br>
+                            والتدريب اليوم
+                            يحتل مكانة مركزية بالعالم كوسيلة هامة وفعالة لتحقيق الأهداف عن طريق تقسيمها لمهمات صغيرة.
+                            <br><br>
+                            لقد أصبحت صناعة التدريب من الصناعات الثقيلة التي تحتاج إلى مدخلات محددة، ويجب أن تتوافر لهذه
+                            المدخلات معايير محددة أيضا من الجودة حتى نستطيع أن نحقق المفهوم الصحيح للتدريب، ونعدل
+                            المفاهيم القديمة، وهو أن التدريب ليس مجرد مصروف ولكنه استثمار عالي القيمة.
+                        </p>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="list-container text-right">
+                        <ol class="nav p-0">
+                            <li class="nav-item nav-link">
+                                1.
+                                التدريب هو وسيلة حديثة وفعالة لتحسين وتطوير أي مجال من المجالات الحياتية
+                            </li>
+                            <li class="nav-item nav-link">
+                                2.
+                                المختلفة، سواء أكان ذلك في المجال الشخصي، الدراسي، المالي، العملي، العائلي،
+                            </li>
+                            <li class="nav-item nav-link">
+                                3.
+                                الصحي أو أي
+                                مجال آخر.
+                            </li>
+                            <li class="nav-item nav-link">
+                                4.
+                                والتدريب اليوم يحتل مكانة مركزية بالعالم كوسيلة هامة وفعالة
+                                لتحقيق</li>
+                            <li class="nav-item nav-link">
+                                5.
+                                الأهداف عن طريق تقسيمها لمهمات صغيرة
+                            </li>
+                        </ol>
+                    </div> -->
+                </div>
+                <div class="col-lg-6 col-12 my-4 my-lg-0">
+                    <div class="form-section text-right">
+                        <form #form="ngForm" (ngSubmit)="submit(form)">
+                            <h3>
+                                بيانات التسجيل
+                            </h3>
+                            <p>التسجيل للإناث فقط</p>
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-4 col-form-label">الاسم</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" #name="ngModel"
+                                        [(ngModel)]="recruitment.name" name="name" placeholder="...اكتب اسمك" required
+                                        [ngClass]='{ "is-invalid":  form.submitted && !name.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="form.submitted && !name.valid " class="alert alert-danger">
+                                        قم بادخال اسمك
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="birth_date" class="col-sm-4 col-form-label">تاريخ الميلاد</label>
+                                <div class="col-sm-8">
+                                    <input  type="date" class="form-control" pattern="\d{4}-\d{2}-\d{2}" placeholder="...حدد تاريخ ميلادك"
+                                        #birth_date="ngModel" [(ngModel)]="recruitment.birth_date" name="birth_date"
+                                        required [ngClass]='{ "is-invalid": form.submitted && !birth_date.valid }'>
+                                        <!-- <input [hidden]="!newDate" [value]="newDate" type="text" class="form-control"> -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf=" form.submitted && !birth_date.valid " class="alert alert-danger">
+                                        قم بادخال تاريخ ميلادك
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-4 col-form-label">البريد الإلكتروني</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" placeholder="...اكتب البريد الإلكتروني"
+                                        #email="ngModel" [(ngModel)]="recruitment.email" name="email" required
+                                        pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                                        [ngClass]='{ "is-invalid":  form.submitted && !email.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12" *ngIf=" form.submitted">
+                                    <div *ngIf=" email.errors?.required " class="alert alert-danger">
+                                        قم بادخال البريد الإلكتروني
+                                    </div>
+                                    <div *ngIf="email.errors?.pattern" class="alert alert-danger">
+                                        البريد الالكتروني غير صحيح
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="qualification" class="col-sm-4 col-form-label">المؤهل</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" placeholder="...اكتب مؤهلك التعليمي"
+                                        #qualification="ngModel" [(ngModel)]="recruitment.qualification"
+                                        name="qualification" required
+                                        [ngClass]='{ "is-invalid": form.submitted && !qualification.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="form.submitted && !qualification.valid " class="alert alert-danger">
+                                        قم بادخال مؤهلك التعليمي
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="experienceYears" class="col-sm-4 col-form-label">سنوات الخبرة</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" placeholder="...تحديد سنوات الخبرة"
+                                        #experienceYears="ngModel" [(ngModel)]="recruitment.experienceYears"
+                                        name="experienceYears" required
+                                        [ngClass]='{ "is-invalid":  form.submitted && !experienceYears.valid }'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf=" form.submitted && !experienceYears.valid " class="alert alert-danger">
+                                        قم بادخال سنوات الخبرة
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row ">
+                                <label for="courses" class="col-sm-4 col-form-label">الدورات</label>
+                                <div class="col-sm-8">
+                                    <ng-template ngFor [ngForOf]="certifactions" let-cert let-index="index">
+                                        <div class="courses">
+                                            <input #courses="ngModel" class="form-control" type="text"
+                                                [(ngModel)]="cert.name" name="cert_{{index}}" required
+                                                [ngClass]='{ "is-invalid":  form.submitted && !courses.valid }'
+                                                placeholder="...اكتب اسم الدورة" (blur)="pushValue(cert.name)">
+                                            <img src="../../../assets/imgs/add.png" alt="add" *ngIf="index==0"
+                                                (click)="add()">
+                                            <img src="../../../assets/imgs/signs (4).png" alt="" *ngIf="index > 0"
+                                                (click)="delete(index)">
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div *ngIf=" form.submitted && !courses.valid "
+                                                    class="alert alert-danger">
+                                                    قم بادخال اسم الدورة
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="educationalQualification" class="col-sm-4 col-form-label">المؤهل الدراسي</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" #educationalQualification="ngModel"
+                                        [(ngModel)]="recruitment.educationalQualification" name="educationalQualification"
+                                        required
+                                        [ngClass]='{ "is-invalid":  form.submitted && !educationalQualification.valid }'>
+                                        <option value="null">...تحديد المؤهل الدراسي</option>
+                                        <option value="بكالوريوس">بكالوريوس</option>
+                                        <option value="ماجستير"> ماجستير</option>
+                                        <option value="دكتوراه">دكتوراه</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf=" form.submitted && !educationalQualification.valid "
+                                        class="alert alert-danger">
+                                        قم بتحديد مدة العقد
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="row text-center justify-content-center align-items-center files">
+                                <img src="../../../assets/imgs/upload.png" alt="upload" class="img-fluid px-4">
+                                <p *ngIf="!cvFile">
+                                    إرفاق السيرة الذاتية
+                                </p>
+                                <p *ngIf="cvFile">
+                                  {{cvFile}}
+                                </p>
+                                <div class="form-group ">
+                                    <div>
+                                        <input type="file" class="form-control" placeholder="...تحديد السعة الإستيعابية"
+                                            #CV="ngModel" [(ngModel)]="cvFile" name="CV" required
+                                            [ngClass]='{ "is-invalid":  form.submitted && !CV.valid }'
+                                            (change)="uploadCv($event.target.files)">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div *ngIf=" form.submitted && !CV.valid " class="alert alert-danger">
+                                            قم بإرفاق السيرة الذاتية
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row text-center justify-content-center align-items-center files">
+                                <img src="../../../assets/imgs/upload.png" alt="upload" class="img-fluid px-4">
+                                <p *ngIf="!CertificateFile">إرفاق الشهادة </p>
+                                <p *ngIf="CertificateFile">{{CertificateFile}}</p>
+                                <div class="form-group ">
+                                    <div>
+                                        <input type="file" class="form-control" placeholder="...تحديد السعة الإستيعابية"
+                                            #Certificate="ngModel" [(ngModel)]="CertificateFile" name="Certificate"
+                                            required [ngClass]='{ "is-invalid":  form.submitted && !Certificate.valid }'
+                                            (change)="uploadCertificate($event.target.files)" >
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div *ngIf=" form.submitted && !Certificate.valid " class="alert alert-danger">
+                                            قم بإرفاق الشهادة
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row text-center justify-content-center">
+                                <button class="btn">ارسال</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

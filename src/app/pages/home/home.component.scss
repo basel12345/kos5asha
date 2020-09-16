@@ -1,0 +1,294 @@
+main {
+    background: transparent url("../../../assets/imgs/bg_home.png") 0% 0% no-repeat padding-box;
+    direction: rtl;
+    position: relative;
+    top: 142px;
+}
+
+// home-container
+.home-container .intro h3 {
+    font: 72px/80px AlmaraiLight;
+    color: #050038;
+}
+
+.home-container .intro p.chance {
+    font: 24px/36px Almarai;
+    color: #b8336a;
+}
+
+.home-container .intro p {
+    font: 18px/27px AlmaraiReg;
+    color: #050038;
+}
+
+.home-container .intro a.nursery {
+    background: #a5dc79 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 12px #a5dc7940;
+    border-radius: 25px;
+    font: 18px/28px Almarai;
+    letter-spacing: 0px;
+    color: #ffffff;
+    padding: 12px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.home-container .intro a.nursery::after,
+#video-container .about a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+.home-container .intro a.nursery:hover,
+#video-container .about a:hover {
+    transition: all 0.3s ease-in-out;
+    color: #a5dc79;
+}
+
+.home-container .intro a.nursery:hover::after,
+#video-container .about a:hover::after {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.home-container .intro a.job {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 12px #a5dc7940;
+    border-radius: 25px;
+    text-align: center;
+    font: Bold 18px/28px Almarai;
+    letter-spacing: 0px;
+    color: #a5dc79;
+    padding: 12px 40px;
+    margin-right: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.home-container .intro a.job::after,
+.training-container .training-text a.btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+    background-color: #a5dc79;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+.home-container .intro a.job:hover,
+.training-container .training-text a.btn:hover {
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+}
+
+.home-container .intro a.job:hover::after,
+.training-container .training-text a.btn:hover::after {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.home-container .container {
+    position: relative;
+}
+
+.home-container .container > a {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+// end home-container
+
+// video-container
+
+#video-container {
+    padding: 150px 0;
+}
+
+#video-container .about {
+    box-sizing: border-box;
+    padding-right: 160px;
+}
+
+#video-container .about h3 {
+    text-align: right;
+    font: Bold 24px/36px Almarai;
+    color: #b8336a;
+}
+
+#video-container .about p {
+    font: 18px/27px AlmaraiReg;
+    letter-spacing: 0px;
+    color: #050038;
+}
+
+#video-container .about a {
+    background: #a5dc79 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 12px #a5dc7940;
+    border-radius: 25px;
+    text-align: center;
+    font: Bold 18px/28px Almarai;
+    letter-spacing: 0px;
+    color: #ffffff;
+    padding: 12px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+// end video-container
+
+// training-container
+
+.training-container .container {
+    background-image: url("../../../assets/imgs/base.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.training-container .container > .row {
+    height: 441px;
+    align-items: center;
+}
+
+.training-container .training-text {
+    box-sizing: border-box;
+    padding-right: 125px;
+}
+
+.training-container .training-text h3 {
+    font: Bold 24px/36px Almarai;
+    letter-spacing: 0px;
+    color: #b8336a;
+}
+
+.training-container .training-text p {
+    font: Regular 18px/27px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+}
+
+.training-container .training-text a.btn {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 12px #a5dc7940;
+    border-radius: 25px;
+    font: Bold 18px/28px Almarai;
+    letter-spacing: 0px;
+    color: #a5dc79;
+    padding: 12px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+// end training-container
+
+// vission-container
+
+.vission-container .vission-text h3 {
+    font: Bold 24px/36px Almarai;
+    letter-spacing: 0px;
+    color: #050038;
+}
+
+.vission-container .vission-text p {
+    font: 18px/27px AlmaraiReg;
+    letter-spacing: 0px;
+    color: #050038;
+}
+
+// end vission-container
+
+//responsev
+
+@media screen and (max-width: 991px) {
+    main {
+        top: 194px;
+    }
+
+    .home-container .intro a.job {
+        margin-right: 0;
+    }
+
+    .home-container .container > a {
+        bottom: -50px;
+    }
+
+    #video-container .about {
+        padding-right: 0;
+    }
+
+    .training-container .training-text {
+        padding-right: 0;
+    }
+
+    .training-container .container > .row {
+        height: 325px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .home-container .intro h3 {
+        font: 52px/80px AlmaraiLight;
+    }
+
+    .home-container .intro p.chance {
+        font: 19px/36px Almarai;
+    }
+
+    .home-container .intro p,
+    #video-container .about p,
+    .training-container .training-text p,
+    .vission-container .vission-text p {
+        font: 15px/27px AlmaraiReg;
+    }
+
+    .home-container .intro a.job,
+    .home-container .intro a.nursery,
+    #video-container .about a,
+    .training-container .training-text a.btn {
+        font: Bold 15px/28px Almarai;
+    }
+
+    #video-container .about h3,
+    .training-container .training-text h3,
+    .vission-container .vission-text h3 {
+        font: Bold 19px/36px Almarai;
+    }
+
+    main {
+        top: 142px;
+    }
+
+    .training-container .container {
+        background-size: cover;
+    }
+
+    .training-container .container > .row {
+        height: 245px;
+        align-items: flex-end;
+    }
+
+    .home-container .container > a {
+        bottom: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    main {
+        top: 190px;
+    }
+}
+
+/* end responsev */

@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h5 class="modal-title">تسجيل الدخول</h5>
+</div>
+<form #form="ngForm" (ngSubmit)="submit(form)">
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" name="email" [(ngModel)]="loginForm.email" class="form-control"
+                placeholder="...اكتب البريد الإلكتروني" #email="ngModel" required
+                pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                [ngClass]='{ "is-invalid":  form.submitted && !email.valid }'>
+            <div *ngIf=" form.submitted">
+                <div *ngIf=" email.errors?.required " class="alert alert-danger">
+                    قم بادخال البريد الإلكتروني
+                </div>
+                <div *ngIf="email.errors?.pattern" class="alert alert-danger">
+                    البريد الالكتروني غير صحيح
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="loginForm.password"
+                placeholder="...اكتب كلمة المرور" #password="ngModel" required
+                [ngClass]='{ "is-invalid":  form.submitted && !password.valid }'>
+            <div *ngIf="form.submitted && !password.valid " class="alert alert-danger">
+                قم بادخال كلمة المرور
+            </div>
+        </div>
+        <p class="reg">هل انت غير مسجل؟</p>
+        <a class="link" (click)="register()"> تسجيل حساب جديد</a>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">تسجيل</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="dismiss()">الغاء</button>
+    </div>
+</form>

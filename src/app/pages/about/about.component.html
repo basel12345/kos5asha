@@ -1,0 +1,113 @@
+<main>
+    <!-- main header -->
+    <section id="about-us">
+        <div class="container mb-5">
+            <div class="about-class ">
+                <h3 class="py-5">عن خشخيشة</h3>
+                <p class="small-font text-center">
+                    منصة الكترونية تشكل حلقة من الاقتصاد التشاركي في المجتمع بخلق فرص عمل للنساء الذين لديهم الرغبة في تقديم خدمة حاضنات الأطفال بطريقة آمنة وسلسة واحترافية مع مرونة عالية في ساعات العمل والاختيارات المتاحة للأمهات الراغبات في الاستفادة من هذه الخدمة لأطفالهن.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- main header -->
+    <!-- video-->
+    <section id="video-section">
+        <div class="container">
+            <div class="row padding">
+                <div class="col-lg-6 my-2" (click)="openModal()">
+                    <img src="../../../assets/imgs/New Project (3).png" class="img-fluid" />
+                </div>
+                <div class="col-lg-6 center">
+
+                    <div class="about text-right">
+                        <p class="small-font">
+                            التدريب هو وسيلة حديثة وفعالة لتحسين وتطوير أي مجال من
+                            المجالات الحياتية المختلفة، سواء أكان ذلك في المجال الشخصي،
+                            الدراسي، المالي، العملي، العائلي، الصحي أو أي مجال آخر.<br><br>
+
+                            والتدريب اليوم يحتل مكانة مركزية بالعالم كوسيلة هامة وفعالة
+                            لتحقيق الأهداف عن طريق تقسيمها لمهمات صغيرة.<br><br>
+
+                            لقد أصبحت صناعة التدريب من الصناعات الثقيلة التي تحتاج إلى
+                            مدخلات محددة، ويجب أن تتوافر لهذه المدخلات معايير محددة أيضا
+                            من الجودة حتى نستطيع أن نحقق المفهوم الصحيح للتدريب، ونعدل
+                            المفاهيم القديمة، وهو أن التدريب ليس مجرد مصروف ولكنه
+                            استثمار عالي القيمة.<br><br>
+                        </p>
+                        <br />
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- video-->
+
+    <!--vision-->
+    <section id="vision-section">
+        <div class="container-fluid">
+            <div class="row padding text-center">
+                <div class="col-md-3  my-2">
+                    <img class="text-center" src="../../../assets/imgs/vision.png">
+                </div>
+                <div class="col-md-9 my-2">
+                    <div class="text-class text-right">
+                        <h3 class="h-font">الرؤية</h3>
+                        <p class="small-font"> أن نكون المزود الأول والموثوق لخدمات حضانة الأطفال في المملكة العربية السعودية
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-3 my-2">
+                    <img class="text-center" src="../../../assets/imgs/message.png">
+                </div>
+                <div class="col-md-9 my-2">
+                    <div class="text-class text-right">
+                        <h3 class="h-font">الرسالة</h3>
+                        <p class="small-font"> نعمل على طمأنينة أرباب  الأسرة في أن أطفالهم في الدور المناسبة صحياً
+                            وتعليمياً وتأهيلياً
+                            لنمو وعناية أطفالهم وذلك من خلال قيمنا بكل شفافية ونزاهة وحيادية وجودة. <br> نطمح بالريادة
+                            والقيادة في توجيه دور الحضانات ورعاية الرضع والنشا ومراقبة البرامج التي تقدّم لأطفالنا
+                            مع العمل على تدريب كوادر الحاضنات بأفضل الطرق العلمية لننطلق وفقا لرؤية مملكتنا 2030.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-3 my-2">
+                    <img class="text-center" src="../../../assets/imgs/goal.png">
+                </div>
+                <div class="col-md-9  my-2">
+                    <div class="text-class text-right">
+                        <h3 class="h-font">أهداف المشروع</h3>
+                        <p class="small-font">1-تخفيف الضغوط على الأمهات العاملات وغير العاملات في العناية بأطفالهن
+                            فى سن الحضانة <br><br>
+                            2-توفير فرص عمل وتدريب الحاضنات (baby setter)للنساء السعوديات بأقل المؤهلات.<br><br>
+                            3- إيجاد الحلول المناسبة لإختيار دور الحضانة المناسبة للرضع الأطفال من أجل التخفيف على
+                            الاسرة.<br><br>
+                            4-العمل على إيجاد البيئة المناسبة الجيدة من أجل الطفل داخل دور الحضانة.<br><br>
+                            5-العمل على أن تكون دور الحضانه بيئة شاملة للمجتمع وفق رؤية المملكة وقيمها من أجل جيل
+                            مبدع.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end vision-->
+</main>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <video width="100%" height="100%" src="../../../assets/imgs/ReTTle1 deit.mp4" autoplay controls></video>
+    </div>
+</ng-template>

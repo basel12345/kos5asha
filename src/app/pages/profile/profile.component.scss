@@ -1,0 +1,57 @@
+main {
+    background: transparent url("../../../assets/imgs/bg_home.png") 0% 0% no-repeat padding-box;
+    direction: rtl;
+    position: relative;
+    top: 142px;
+}
+
+main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/imgs/bg.png");
+    z-index: -1;
+}
+
+.container {
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+h4 {
+    text-align: right;
+}
+
+.nursery {
+    margin-bottom: 56px;
+}
+
+thead {
+    background-color: #a5dc79;
+    color: white;
+}
+
+button {
+    background-color: #a5dc79;
+    color: white;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all .5s ease-in-out;
+}
+
+button:hover {
+    background-color: white;
+    color: #a5dc79;
+}
+
+
+@media screen and (max-width: 991px) {
+   .nursery{
+    margin-top: 94px;
+   }
+}

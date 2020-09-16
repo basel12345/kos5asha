@@ -1,0 +1,72 @@
+<div class="modal-header">
+  <h5 class="modal-title">تعديل كلمة المرور</h5>
+</div>
+<form #formInfo="ngForm" (ngSubmit)="submit(formInfo)">
+  <div class="modal-body">
+      <div class="form-group">
+          <label for="username">الاسم</label>
+          <input type="text" class="form-control" name="username" [(ngModel)]="regForm.username"
+              placeholder="... اكتب الاسم" #username="ngModel" required
+              [ngClass]='{ "is-invalid":  formInfo.submitted && !username.valid }'>
+          <div *ngIf=" formInfo.submitted && !username.valid " class="alert alert-danger">
+              قم بادخال الاسم
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="email">البريد الالكتروني</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="regForm.email"
+              placeholder="...اكتب البريد الالكتروني" #email="ngModel" required
+              pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+              [ngClass]='{ "is-invalid":  formInfo.submitted && !email.valid }'>
+              <div *ngIf=" formInfo.submitted">
+                <div *ngIf=" email.errors?.required " class="alert alert-danger">
+                    قم بادخال البريد الإلكتروني
+                </div>
+                <div *ngIf="email.errors?.pattern" class="alert alert-danger">
+                    البريد الالكتروني غير صحيح
+                </div>
+            </div>
+      </div>
+      <div class="form-group">
+        <label for="address">العنوان</label>
+        <input type="text" class="form-control" name="address" [(ngModel)]="regForm.address"
+            placeholder="...اكتب العنوان" #address="ngModel" required
+            [ngClass]='{ "is-invalid":  formInfo.submitted && !address.valid }'>
+          <div *ngIf=" formInfo.submitted && !address.valid " class="alert alert-danger">
+              قم بادخال العنوان
+          </div>
+    </div>
+      <div class="form-group">
+        <label for="mobile">الجوال</label>
+        <input class="form-control" name="mobile" [(ngModel)]="regForm.mobile"
+            placeholder="...اكتب الجوال" #mobile="ngModel" required
+            [ngClass]='{ "is-invalid":  formInfo.submitted && !mobile.valid }'>
+            <div *ngIf=" formInfo.submitted">
+              <div *ngIf=" mobile.errors?.required " class="alert alert-danger">
+                  قم بادخال الجوال
+              </div>
+              <div *ngIf="mobile.errors?.pattern" class="alert alert-danger">
+                يجب ادخال الرقم صحيح (يحتوي على 10 ارقام)
+              </div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="telephone">الهاتف الثابت</label>
+        <input class="form-control" name="telephone" [(ngModel)]="regForm.telephone"
+            placeholder="...اكتب الهاتف الثابت" #telephone="ngModel" required
+            [ngClass]='{ "is-invalid":  formInfo.submitted && !telephone.valid }'>
+            <div *ngIf=" formInfo.submitted">
+              <div *ngIf=" telephone.errors?.required " class="alert alert-danger">
+                  قم بادخال الهاتف الثابت
+              </div>
+              <div *ngIf="telephone.errors?.pattern" class="alert alert-danger">
+                يجب ادخال الرقم صحيح (يحتوي على 10 ارقام)
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">حفظ</button>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="dismiss()">الغاء</button>
+  </div>
+</form>
